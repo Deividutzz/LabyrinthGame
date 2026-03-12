@@ -1,0 +1,31 @@
+.slider
+{
+
+}
+.slider .track
+{
+    -fx-background-color: #0A5C36;
+    -fx-pref-height: 8px;
+}
+.slider .thumb
+{
+    -fx-background-radius: 10;
+}
+.slider .axis
+{
+    -fx-tick-label-fill: #f8860c;
+    -fx-tick-label-font: bold 12px "Times New Roman";
+}
+.slider .axis .tick-mark
+{
+     -fx-stroke: transparent;
+}
+.label
+{
+    -fx-text-fill: #f8860c;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Times New Roman";
+    -fx-effect: dropshadow(gaussian, black, 2, 2, 1, 1);
+    /* dropshadow(type, color, radius, spread, offsetX, offsetY) */
+}

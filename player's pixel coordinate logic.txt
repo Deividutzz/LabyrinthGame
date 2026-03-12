@@ -1,0 +1,32 @@
+player's pixel coordinate logic:
+
+    private int pixelX = 0;
+    private int pixelY = 0;
+    private int pxValueX = 504;
+    private int pxValueY = 26;
+    private int dimension = 60;
+    /// coord == poz in matrix
+    /// pixel == pixel value on the screen
+    /// formula -> pixelValue + dimension*coord == pixelCoord
+public void setPixelXY (int x, int y)
+    {
+        pixelX = pxValueX + dimension*x;
+        pixelY = pxValueY + dimension*y;
+    }
+    public void setPixelValue(int x, int y)
+    {
+        pxValueX = x;
+        pxValueY = y;
+    }
+    public void setDimension(int dim)
+    {
+        dimension = dim;
+    }
+    public int getPixelX()
+    {
+        return pixelX;
+    }
+    public int getPixelY()
+    {
+        return pixelY;
+    }

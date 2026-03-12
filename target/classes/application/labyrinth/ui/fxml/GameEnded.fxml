@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<?import javafx.scene.image.ImageView?>
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="application.labyrinth.app.ui.controller.GameEnded">
+
+    <children>
+
+        <ImageView fx:id="backgroundImg"/>
+
+        <VBox spacing="20" alignment="CENTER">
+            <Button fx:id="returnToMenu" text="Return to main menu"/>
+            <Button fx:id="quitGame" text="Quit Game"/>
+        </VBox>
+
+    </children>
+
+</StackPane>

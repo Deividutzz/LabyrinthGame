@@ -1,0 +1,17 @@
+[
+  {
+    "latest" : true,
+    "module" : "org.hibernate.validator:hibernate-validator",
+    "metadata-version" : "7.0.4.Final",
+    "tested-versions" : [
+      "7.0.4.Final",
+      "7.0.5.Final",
+      "8.0.0.Final",
+      "8.0.1.Final",
+      "8.0.2.Final",
+      "9.0.0.Final",
+      "9.0.1.Final",
+      "9.1.0.Final"
+    ]
+  }
+]
