@@ -2,6 +2,7 @@ package application.labyrinth.app.ui.controller;
 
 import application.labyrinth.app.game.GameResolution;
 import application.labyrinth.app.ui.menu.SceneManager;
+import application.labyrinth.app.ui.menu.SoundtrackManager;
 import application.labyrinth.app.ui.options.OptionsController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -25,12 +26,14 @@ public class Sound
     private SceneManager manager;
     private OptionsController controller;
     private GameResolution resolution;
+    private SoundtrackManager soundtrack;
 
-    public void init(SceneManager manager, OptionsController controller, GameResolution resolution)
+    public void init(SceneManager manager, OptionsController controller, GameResolution resolution, SoundtrackManager soundtrack)
     {
         this.manager = manager;
         this.controller = controller;
         this.resolution = resolution;
+        this.soundtrack = soundtrack;
 
         setupActions();
         setupBackground();
@@ -41,7 +44,11 @@ public class Sound
         volumeSlider.setValue(controller.getVolume());
         setProperties();
         volumeSlider.valueProperty().addListener((o, ov, nv) ->
-                controller.setVolume(nv.intValue())
+            {
+                controller.setVolume(nv.intValue());
+                double volume = (double) controller.getVolume() / 10;
+                soundtrack.setVolume(volume);
+            }
         );
 
         fullscreenButton.setOnAction(e -> {

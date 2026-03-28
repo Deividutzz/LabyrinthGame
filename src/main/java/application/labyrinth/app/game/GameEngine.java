@@ -13,6 +13,7 @@ public class GameEngine
     private final List<Enemy> enemies;
     private final Player player;
     private final GameState gameState;
+    private final GameStats stats;
 
     private final MovementService movementService;
     private final EnemyChaseService enemyChaseService;
@@ -27,7 +28,8 @@ public class GameEngine
                       GameState gameState,
                       MovementService movementService,
                       EnemyChaseService enemyChaseService,
-                      int speedDiff)
+                      int speedDiff,
+                      GameStats stats)
     {
         this.player = player;
         this.enemies = enemies;
@@ -36,6 +38,7 @@ public class GameEngine
         this.movementService = movementService;
         this.enemyChaseService = enemyChaseService;
         this.enemySpeed = speedDiff;
+        this.stats = stats;
         enemyMoveDelay = computeEnemySpeed();
     }
     public void movePlayer(Direction direction)
@@ -102,6 +105,16 @@ public class GameEngine
                 gameState.isGameOver(),
                 new GameStateView(gameState.playerMoved(), gameState.enemyMoved())
         );
+    }
+    public boolean pauseTimer()
+    {
+        stats.pauseTimer();
+
+        return stats.isPaused();
+    }
+    public void resumeTimer()
+    {
+        stats.resumeTimer();
     }
 
     private int computeEnemySpeed()

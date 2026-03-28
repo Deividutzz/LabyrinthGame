@@ -4,6 +4,7 @@ import application.labyrinth.app.game.GameResolution;
 import application.labyrinth.app.ui.controller.Sound;
 import application.labyrinth.app.ui.fxml.FxmlConfig;
 import application.labyrinth.app.ui.menu.SceneManager;
+import application.labyrinth.app.ui.menu.SoundtrackManager;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,7 +15,7 @@ public class SoundScene
 {
     private final Scene scene;
 
-    public SoundScene(SceneManager manager, OptionsController controller, GameResolution resolution)
+    public SoundScene(SceneManager manager, OptionsController controller, GameResolution resolution, SoundtrackManager soundtrack)
     {
         try
         {
@@ -27,7 +28,7 @@ public class SoundScene
             Parent root = loader.load();
 
             Sound soundController = loader.getController();
-            soundController.init(manager,controller,resolution);
+            soundController.init(manager,controller,resolution,soundtrack);
 
             final double width = resolution.getWidth(resolution.getScaleW());
             final double height = resolution.getHeight(resolution.getScaleH());

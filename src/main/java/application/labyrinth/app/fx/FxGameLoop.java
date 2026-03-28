@@ -26,8 +26,12 @@ public class FxGameLoop extends AnimationTimer
 
     @Override
     public void handle(long now) {
+        engine.pauseTimer();
         if(!engine.isGamePaused())
         {
+            if(engine.pauseTimer())
+                engine.resumeTimer();
+
             engine.updateEnemies();
             renderer.renderDynamic(engine.getView());
             if (engine.isGameOver())

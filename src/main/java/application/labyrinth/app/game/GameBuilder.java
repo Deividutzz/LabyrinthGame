@@ -7,7 +7,7 @@ import java.util.List;
 
 public class GameBuilder
 {
-    public GameEngine create(GameConfig config)
+    public GameEngine create(GameConfig config, GameStats stats)
     {
         Volume volume = new Volume();
         volume.setVolume(config.getSoundVolume());
@@ -32,7 +32,8 @@ public class GameBuilder
                 gameState,
                 movementService,
                 chaseService,
-                config.getEnemySpeed()
+                config.getEnemySpeed(),
+                stats
         );
     }
 }

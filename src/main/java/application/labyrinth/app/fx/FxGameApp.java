@@ -2,6 +2,7 @@ package application.labyrinth.app.fx;
 
 import application.labyrinth.app.ending.GameEndedScene;
 import application.labyrinth.app.ui.controller.Game;
+import application.labyrinth.app.ui.controller.Sound;
 import application.labyrinth.app.ui.fxml.FxmlConfig;
 import application.labyrinth.app.ui.game.GameLoader;
 import application.labyrinth.app.ui.menu.*;
@@ -20,7 +21,10 @@ public class FxGameApp extends Application
 {
     public void start(Stage stage)
     {
+        GameStats gameStats = new GameStats();
         GameResolution resolution = new GameResolution();
+        SoundtrackManager soundtrack = new SoundtrackManager();
+        soundtrack.play();
 
         declareStage(stage,resolution);
 
@@ -50,7 +54,8 @@ public class FxGameApp extends Application
                 gameBuild,
                 loop,
                 gameController,
-                sceneManager
+                sceneManager,
+                gameStats
         );
 
         /// Input declaration:
@@ -61,11 +66,12 @@ public class FxGameApp extends Application
 
         /// Scenes creation:
 
-        SceneCreator sceneCreator = new SceneCreator(sceneManager,config,flow,gameScene,resolution);
+        SceneCreator sceneCreator = new SceneCreator(sceneManager,config,flow,gameScene,resolution,soundtrack);
         sceneCreator.create();
 
-        GameEndedScene endGame = new GameEndedScene(sceneManager,sceneCreator,resolution);
+        GameEndedScene endGame = new GameEndedScene(sceneManager,sceneCreator,resolution,gameStats);
         sceneManager.setEndGame(endGame.getScene());
+        flow.injectEndGame(endGame);
 
         sceneManager.showMainMenu();
         stage.setTitle("Labyrinth Game");

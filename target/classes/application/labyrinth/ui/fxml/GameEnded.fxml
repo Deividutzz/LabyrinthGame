@@ -5,16 +5,26 @@
 <?import javafx.scene.control.Button?>
 
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Label?>
 <StackPane xmlns:fx="http://javafx.com/fxml"
-           fx:controller="application.labyrinth.app.ui.controller.GameEnded">
+           fx:controller="application.labyrinth.app.ui.controller.GameEnded"
+           stylesheets="@/application/labyrinth/ui/css/GameStyling.css"
+           styleClass="game-stats">
 
     <children>
 
         <ImageView fx:id="backgroundImg"/>
 
         <VBox spacing="20" alignment="CENTER">
+
+            <Label fx:id="timeSurvivedLabel"
+                   text="Mario succesfully survived: "
+                   layoutX="200"
+                   layoutY="150"/>
+
             <Button fx:id="returnToMenu" text="Return to main menu"/>
             <Button fx:id="quitGame" text="Quit Game"/>
+
         </VBox>
 
     </children>

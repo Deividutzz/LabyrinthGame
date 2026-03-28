@@ -19,8 +19,9 @@ public class SceneCreator
     private final GameConfig config;
     private SoundScene soundScene;
     private final GameResolution resolution;
+    private final SoundtrackManager soundtrack;
 
-    public SceneCreator(SceneManager sceneManager, GameConfig config, GameFlowController flow, GameScene gameScene, GameResolution resolution)
+    public SceneCreator(SceneManager sceneManager, GameConfig config, GameFlowController flow, GameScene gameScene, GameResolution resolution, SoundtrackManager soundtrack)
     {
         this.config = config;
         this.sceneManager = sceneManager;
@@ -29,7 +30,8 @@ public class SceneCreator
         this.optionsScene = new OptionsScene(sceneManager,resolution);
         this.mainScene = new MainMenuScene(sceneManager,flow,resolution);
         this.difficultyScene = new DifficultyScene(sceneManager,optionsController,resolution);
-        this.soundScene = new SoundScene(sceneManager,optionsController,resolution);
+        this.soundScene = new SoundScene(sceneManager,optionsController,resolution,soundtrack);
+        this.soundtrack = soundtrack;
         sceneManager.setGame(gameScene.getScene());
     }
     public void create()
@@ -37,7 +39,7 @@ public class SceneCreator
         OptionsController optionsController = new OptionsController(config);
         optionsScene = new OptionsScene(sceneManager,resolution);
         difficultyScene = new DifficultyScene(sceneManager,optionsController,resolution);
-        soundScene = new SoundScene(sceneManager,optionsController,resolution);
+        soundScene = new SoundScene(sceneManager,optionsController,resolution,soundtrack);
         sceneManager.setMainMenu(mainScene.getScene());
         sceneManager.setOptions(optionsScene.getScene());
         sceneManager.setDifficulty(difficultyScene.getScene());
