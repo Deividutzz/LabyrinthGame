@@ -67,8 +67,16 @@ public class GameEnded
     private void setupTimeSurvivedLabel()
     {
         //System.out.println(gameStats.getTimeSurvived() + "ceva");
+
+        String minutes = gameStats.getminutesSurvived() + " minutes and ";
+        if(gameStats.getminutesSurvived().equals("0"))
+            minutes = "";
+
+        String seconds = gameStats.getsecondsSurvived() + " seconds";
+        if(gameStats.getsecondsSurvived().equals("0"))
+            seconds = "";
+
         timeSurvivedLabel.setText(
-                timeSurvivedLabel.getText() + gameStats.getminutesSurvived() +
-                " minutes and " + gameStats.getsecondsSurvived() + " seconds");
+                timeSurvivedLabel.getText() + minutes + seconds);
     }
 }

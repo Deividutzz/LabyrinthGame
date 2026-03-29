@@ -6,7 +6,8 @@
 
 <?import javafx.scene.image.ImageView?>
 <StackPane xmlns:fx="http://javafx.com/fxml"
-           fx:controller="application.labyrinth.app.ui.controller.Options">
+           fx:controller="application.labyrinth.app.ui.controller.Options"
+           stylesheets="@/application/labyrinth/ui/css/OptionsStyling.css">
 
     <children>
 

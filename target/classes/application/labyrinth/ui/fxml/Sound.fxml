@@ -9,6 +9,7 @@
 <?import javafx.scene.control.Label?>
 <StackPane xmlns:fx="http://javafx.com/fxml"
            fx:controller="application.labyrinth.app.ui.controller.Sound"
+           stylesheets="@/application/labyrinth/ui/css/AudioStyling.css"
            fx:id="root">
 
     <children>
@@ -16,7 +17,7 @@
         <ImageView fx:id="backgroundImg"/>
 
         <VBox spacing="20" alignment="CENTER">
-            <Label text="Set the sound volume:" />
+            <Label text="Adjust the music volume:" />
             <Slider fx:id="volumeSlider" min="0" max="10" maxWidth="540"/>
             <Button fx:id="fullscreenButton" text="Set fullscreen"/>
             <Button fx:id="resetButton" text="Reset to default"/>

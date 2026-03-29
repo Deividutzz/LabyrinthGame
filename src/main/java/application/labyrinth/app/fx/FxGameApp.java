@@ -2,17 +2,13 @@ package application.labyrinth.app.fx;
 
 import application.labyrinth.app.ending.GameEndedScene;
 import application.labyrinth.app.ui.controller.Game;
-import application.labyrinth.app.ui.controller.Sound;
-import application.labyrinth.app.ui.fxml.FxmlConfig;
 import application.labyrinth.app.ui.game.GameLoader;
 import application.labyrinth.app.ui.menu.*;
 import application.labyrinth.app.game.*;
-import com.almasb.fxgl.app.FXGLApplication;
 import javafx.animation.PauseTransition;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;

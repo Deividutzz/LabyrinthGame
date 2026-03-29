@@ -8,6 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <StackPane xmlns:fx="http://javafx.com/fxml"
            fx:controller="application.labyrinth.app.ui.controller.Menu"
+           stylesheets="@/application/labyrinth/ui/css/MenuStyling.css"
            fx:id="root">
     <children>
 
