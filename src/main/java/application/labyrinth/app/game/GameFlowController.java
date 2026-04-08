@@ -45,7 +45,7 @@ public class GameFlowController
         loop.stop();
         config.delete();
         sceneManager.showEndGame();
-        gameStats.pauseTimer();
+        gameStats.resetTimer();
         gameEnded.getEndedCntrllr().setupStats();
     }
 

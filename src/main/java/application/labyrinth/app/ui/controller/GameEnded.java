@@ -67,6 +67,7 @@ public class GameEnded
     private void setupTimeSurvivedLabel()
     {
         //System.out.println(gameStats.getTimeSurvived() + "ceva");
+        timeSurvivedLabel.setText("Mario succesfully survived: ");
 
         String minutes = gameStats.getminutesSurvived() + " minutes and ";
         if(gameStats.getminutesSurvived().equals("0"))

@@ -13,6 +13,8 @@ public class GameStats
     private String secondsSurvived = "";
     private Timeline timeline;
 
+    private final AtomicInteger seconds = new AtomicInteger();
+
     public GameStats()
     {
         startsCounter();
@@ -21,7 +23,7 @@ public class GameStats
     public void startsCounter()
     {
         //timeCounterLabel.setVisible(true);
-        AtomicInteger seconds = new AtomicInteger();
+        seconds.set(0);
 
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
             seconds.getAndIncrement();
@@ -49,6 +51,11 @@ public class GameStats
     {
         if(isPaused())
             timeline.play();
+    }
+    public void resetTimer()
+    {
+        seconds.set(0);
+        timeline.stop();
     }
     public String getminutesSurvived()
     {
