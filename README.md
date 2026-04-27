@@ -14,7 +14,9 @@ is meant only for fun and taking some time to run from Mario's friends.
 The music used in this game is copyrighted and not
 owned by the creator of this project. The only purpose
 of this project is for education and this product offers
-no profit for the creator. So the usage, of this copyrighted
+no profit for the creator. Furthermore, every content related
+to Mario's universe is strictly owned by Nintendo and it is
+copyrighted material as well. So the usage, of this copyrighted
 music, is strictly based on fair use as described below:
 
 "Copyright Disclaimer Under Section 107 of the Copyright Act 1976,
